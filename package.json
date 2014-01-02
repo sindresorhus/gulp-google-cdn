@@ -32,6 +32,7 @@
     "google-cdn": "~0.2.5"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "bower": "*"
   }
 }

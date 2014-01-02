@@ -4,6 +4,8 @@ var gutil = require('gulp-util');
 var googlecdn = require('./index');
 
 it('should replace libs with Google CDN hosted ones', function (cb) {
+	this.timeout(2000);
+
 	var stream = googlecdn(require('./bower.json'));
 
 	stream.on('data', function (file) {
