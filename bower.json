@@ -1,0 +1,6 @@
+{
+	"name": "fixture",
+	"dependencies": {
+		"jquery": "~2.0.0"
+	}
+}
