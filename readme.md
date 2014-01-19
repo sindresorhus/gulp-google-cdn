@@ -1,6 +1,6 @@
 # [gulp](http://gulpjs.com)-google-cdn [![Build Status](https://secure.travis-ci.org/sindresorhus/gulp-google-cdn.png?branch=master)](http://travis-ci.org/sindresorhus/gulp-google-cdn)
 
-> Replaces script references with [Google CDN](https://github.com/passy/google-cdn) ones.
+> Replaces script references with [Google CDN](https://github.com/passy/google-cdn) ones
 
 *Issues with the output should be reported on the google-cdn [issue tracker](https://github.com/passy/google-cdn/issues).*
 

@@ -1,21 +1,29 @@
 'use strict';
 var gutil = require('gulp-util');
-var map = require('map-stream');
+var through = require('through2');
 var googlecdn = require('google-cdn');
 
 module.exports = function (bowerConfig, options) {
-	return map(function (file, cb) {
+	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
-			return cb(null, file);
+			this.push(file);
+			return cb();
+		}
+
+		if (file.isStream()) {
+			this.emit('error', new gutil.PluginError('gulp-google-cdn', 'Streaming not supported'));
+			return cb();
 		}
 
 		googlecdn(file.contents.toString(), bowerConfig, options, function (err, data) {
 			if (err) {
-				return cb(new Error('gulp-google-cdn: ' + err));
+				this.emit('error', new gutil.PluginError('gulp-google-cdn', err));
+				return cb();
 			}
 
 			file.contents = new Buffer(data);
-			cb(null, file);
-		});
+			this.push(file);
+			cb();
+		}.bind(this));
 	});
 };

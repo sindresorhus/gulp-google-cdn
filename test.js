@@ -4,7 +4,7 @@ var gutil = require('gulp-util');
 var googlecdn = require('./index');
 
 it('should replace libs with Google CDN hosted ones', function (cb) {
-	this.timeout(2000);
+	this.timeout(10000);
 
 	var stream = googlecdn(require('./bower.json'));
 
@@ -14,6 +14,7 @@ it('should replace libs with Google CDN hosted ones', function (cb) {
 	});
 
 	stream.write(new gutil.File({
+		path: 'index.html',
 		contents: new Buffer('<script src="bower_components/jquery/jquery.js"></script>')
 	}));
 });
