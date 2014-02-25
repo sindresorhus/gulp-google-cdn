@@ -27,9 +27,9 @@
     "html"
   ],
   "dependencies": {
-    "gulp-util": "~2.2.0",
-    "through2": "~0.4.0",
-    "google-cdn": "~0.3.0"
+    "gulp-util": "^2.2.0",
+    "through2": "^0.4.0",
+    "google-cdn": "^0.4.0"
   },
   "devDependencies": {
     "mocha": "*",
