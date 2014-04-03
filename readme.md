@@ -1,4 +1,4 @@
-# [gulp](http://gulpjs.com)-google-cdn [![Build Status](https://secure.travis-ci.org/sindresorhus/gulp-google-cdn.png?branch=master)](http://travis-ci.org/sindresorhus/gulp-google-cdn)
+# [gulp](http://gulpjs.com)-google-cdn [![Build Status](https://travis-ci.org/sindresorhus/gulp-google-cdn.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-google-cdn)
 
 > Replaces script references with [Google CDN](https://github.com/passy/google-cdn) ones
 
@@ -7,14 +7,12 @@
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-google-cdn)
-
-```
-npm install --save-dev gulp-google-cdn
+```bash
+$ npm install --save-dev gulp-google-cdn
 ```
 
 
-## Example
+## Usage
 
 ```js
 var gulp = require('gulp');
@@ -44,4 +42,4 @@ See the google-cdn [options](https://github.com/passy/google-cdn#googlecdnconten
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
