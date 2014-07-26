@@ -17,7 +17,7 @@ module.exports = function (bowerConfig, options) {
 
 		googlecdn(file.contents.toString(), bowerConfig, options, function (err, data) {
 			if (err) {
-				this.emit('error', new gutil.PluginError('gulp-google-cdn', err));
+				this.emit('error', new gutil.PluginError('gulp-google-cdn', err, {fileName: file.path}));
 				return cb();
 			}
 

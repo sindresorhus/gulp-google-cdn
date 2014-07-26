@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
 var gutil = require('gulp-util');
-var googlecdn = require('./index');
+var googlecdn = require('./');
 
 it('should replace libs with Google CDN hosted ones', function (cb) {
 	this.timeout(10000);
