@@ -15,6 +15,6 @@ it('should replace libs with Google CDN hosted ones', function (cb) {
 
 	stream.write(new gutil.File({
 		path: 'index.html',
-		contents: new Buffer('<script src="bower_components/jquery/jquery.js"></script>')
+		contents: new Buffer('<script src="bower_components/jquery/dist/jquery.js"></script>')
 	}));
 });
