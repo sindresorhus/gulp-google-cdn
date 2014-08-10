@@ -1,6 +1,6 @@
 {
   "name": "gulp-google-cdn",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Replaces script references with Google CDN ones",
   "license": "MIT",
   "repository": "sindresorhus/gulp-google-cdn",
