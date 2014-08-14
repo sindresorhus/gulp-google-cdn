@@ -8,13 +8,16 @@ it('should replace libs with Google CDN hosted ones', function (cb) {
 
 	var stream = googlecdn(require('./bower.json'));
 
-	stream.on('data', function (file) {
+	stream.once('data', function (file) {
 		assert(/ajax\.googleapis/.test(file.contents.toString()));
-		cb();
 	});
+
+	stream.on('end', cb);
 
 	stream.write(new gutil.File({
 		path: 'index.html',
 		contents: new Buffer('<script src="bower_components/jquery/dist/jquery.js"></script>')
 	}));
+
+	stream.end();
 });

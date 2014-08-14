@@ -7,7 +7,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save-dev gulp-google-cdn
 ```
 
@@ -33,7 +33,7 @@ gulp.task('default', function () {
 #### bowerConfig
 
 *Required*  
-Type: `Object`
+Type: `object`
 
 #### options
 
@@ -42,4 +42,4 @@ See the google-cdn [options](https://github.com/passy/google-cdn#googlecdnconten
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
