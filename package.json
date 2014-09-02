@@ -27,7 +27,7 @@
     "html"
   ],
   "dependencies": {
-    "google-cdn": "^0.6.0",
+    "google-cdn": "^0.7.0",
     "gulp-util": "^3.0.0",
     "through2": "^0.6.1"
   },
