@@ -15,31 +15,32 @@ $ npm install --save-dev gulp-google-cdn
 ## Usage
 
 ```js
-var gulp = require('gulp');
-var googlecdn = require('gulp-google-cdn');
+const gulp = require('gulp');
+const googleCdn = require('gulp-google-cdn');
 
-gulp.task('default', function () {
-	return gulp.src('index.html')
-		.pipe(googlecdn(require('./bower.json')))
-		.pipe(gulp.dest('dist'));
-});
+gulp.task('default', () =>
+	gulp.src('index.html')
+		.pipe(googleCdn(require('./bower.json')))
+		.pipe(gulp.dest('dist'))
+);
 ```
 
 
 ## API
 
-### googlecdn(bowerConfig, [options])
+### googleCdn(bowerConfig, [options])
 
 #### bowerConfig
 
-*Required*  
-Type: `object`
+Type: `Object`
 
 #### options
 
-See the google-cdn [options](https://github.com/passy/google-cdn#googlecdncontent-bowerjson-options-callback).
+Type: `Object`
+
+See the `google-cdn` [options](https://github.com/passy/google-cdn#googlecdncontent-bowerjson-options-callback).
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

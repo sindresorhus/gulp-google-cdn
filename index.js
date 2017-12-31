@@ -1,27 +1,28 @@
 'use strict';
-var gutil = require('gulp-util');
-var through = require('through2');
-var googlecdn = require('google-cdn');
+const through = require('through2');
+const googleCdn = require('google-cdn');
+const PluginError = require('plugin-error');
+const Buffer = require('safe-buffer').Buffer;
 
-module.exports = function (bowerConfig, options) {
-	return through.obj(function (file, enc, cb) {
+module.exports = (bowerConfig, options) => {
+	return through.obj((file, enc, cb) => {
 		if (file.isNull()) {
 			cb(null, file);
 			return;
 		}
 
 		if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-google-cdn', 'Streaming not supported'));
+			cb(new PluginError('gulp-google-cdn', 'Streaming not supported'));
 			return;
 		}
 
-		googlecdn(file.contents.toString(), bowerConfig, options, function (err, data) {
+		googleCdn(file.contents.toString(), bowerConfig, options, (err, data) => {
 			if (err) {
-				cb(new gutil.PluginError('gulp-google-cdn', err, {fileName: file.path}));
+				cb(new PluginError('gulp-google-cdn', err, {fileName: file.path}));
 				return;
 			}
 
-			file.contents = new Buffer(data);
+			file.contents = Buffer.from(data);
 			cb(null, file);
 		});
 	});

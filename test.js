@@ -1,23 +1,22 @@
+/* eslint-env mocha */
 'use strict';
-var assert = require('assert');
-var gutil = require('gulp-util');
-var googlecdn = require('./');
+const assert = require('assert');
+const Vinyl = require('vinyl');
+const googleCdn = require('.');
 
-it('should replace libs with Google CDN hosted ones', function (cb) {
+it('replaces libs with Google CDN hosted ones', function (cb) {
 	this.timeout(10000);
 
-	var stream = googlecdn(require('./bower.json'));
+	const stream = googleCdn(require('./fixtures/bower.json'));
 
-	stream.once('data', function (file) {
+	stream.once('data', file => {
 		assert(/ajax\.googleapis/.test(file.contents.toString()));
 	});
 
 	stream.on('end', cb);
 
-	stream.write(new gutil.File({
+	stream.end(new Vinyl({
 		path: 'index.html',
-		contents: new Buffer('<script src="bower_components/jquery/dist/jquery.js"></script>')
+		contents: Buffer.from('<script src="bower_components/jquery/dist/jquery.js"></script>')
 	}));
-
-	stream.end();
 });

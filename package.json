@@ -1,38 +1,40 @@
 {
-  "name": "gulp-google-cdn",
-  "version": "2.1.0",
-  "description": "Replaces script references with Google CDN ones",
-  "license": "MIT",
-  "repository": "sindresorhus/gulp-google-cdn",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "gulpplugin",
-    "cdn",
-    "google",
-    "cdnjs",
-    "bower",
-    "html"
-  ],
-  "dependencies": {
-    "google-cdn": "^1.0.0",
-    "gulp-util": "^3.0.0",
-    "through2": "^2.0.0"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "bower": "*"
-  }
+	"name": "gulp-google-cdn",
+	"version": "2.1.0",
+	"description": "Replaces script references with Google CDN ones",
+	"license": "MIT",
+	"repository": "sindresorhus/gulp-google-cdn",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && mocha"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"gulpplugin",
+		"cdn",
+		"google",
+		"cdnjs",
+		"bower",
+		"html"
+	],
+	"dependencies": {
+		"google-cdn": "^1.0.0",
+		"plugin-error": "^0.1.2",
+		"safe-buffer": "^5.1.1",
+		"through2": "^2.0.0"
+	},
+	"devDependencies": {
+		"bower": "*",
+		"mocha": "*",
+		"vinyl": "^2.1.0"
+	}
 }
