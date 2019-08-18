@@ -10,7 +10,7 @@
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=4"
+		"node": ">=8"
 	},
 	"scripts": {
 		"test": "xo && mocha"
@@ -28,14 +28,21 @@
 	],
 	"dependencies": {
 		"google-cdn": "^1.0.0",
-		"plugin-error": "^0.1.2",
-		"safe-buffer": "^5.1.1",
-		"through2": "^2.0.0"
+		"plugin-error": "^1.0.1",
+		"through2": "^3.0.1"
 	},
 	"devDependencies": {
-		"bower": "*",
-		"mocha": "*",
+		"bower": "^1.8.8",
+		"mocha": "^6.2.0",
 		"vinyl": "^2.1.0",
-		"xo": "*"
+		"xo": "^0.24.0"
+	},
+	"peerDependencies": {
+		"gulp": ">=4"
+	},
+	"peerDependenciesMeta": {
+		"gulp": {
+			"optional": true
+		}
 	}
 }

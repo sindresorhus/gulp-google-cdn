@@ -2,28 +2,27 @@
 const through = require('through2');
 const googleCdn = require('google-cdn');
 const PluginError = require('plugin-error');
-const Buffer = require('safe-buffer').Buffer;
 
 module.exports = (bowerConfig, options) => {
-	return through.obj((file, enc, cb) => {
+	return through.obj((file, encoding, callback) => {
 		if (file.isNull()) {
-			cb(null, file);
+			callback(null, file);
 			return;
 		}
 
 		if (file.isStream()) {
-			cb(new PluginError('gulp-google-cdn', 'Streaming not supported'));
+			callback(new PluginError('gulp-google-cdn', 'Streaming not supported'));
 			return;
 		}
 
-		googleCdn(file.contents.toString(), bowerConfig, options, (err, data) => {
-			if (err) {
-				cb(new PluginError('gulp-google-cdn', err, {fileName: file.path}));
+		googleCdn(file.contents.toString(), bowerConfig, options, (error, data) => {
+			if (error) {
+				callback(new PluginError('gulp-google-cdn', error, {fileName: file.path}));
 				return;
 			}
 
 			file.contents = Buffer.from(data);
-			cb(null, file);
+			callback(null, file);
 		});
 	});
 };
