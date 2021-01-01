@@ -1,4 +1,4 @@
-# gulp-google-cdn [![Build Status](https://travis-ci.org/sindresorhus/gulp-google-cdn.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-google-cdn)
+# gulp-google-cdn
 
 > Replaces script references with [Google CDN](https://github.com/passy/google-cdn) ones
 
